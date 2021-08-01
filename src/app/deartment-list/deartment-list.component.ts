@@ -35,10 +35,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
       <label for="spendOn">Spent On</label><br>
     <input  type="text" formControlName="spendOn" id="spendOn" class="form-control mb-4" placeholder="Enter the spendOn TIME">
     </div>
+    <div class="col">
+    <input type="checkbox" id="rememberMe" checked >
+      <label for="rememberMe">Remember me</label>
+    </div><br>
     <button (click)="onSubmit()" class="btn btn-primary my-4 btn-block"[disabled]="profileForm.invalid">Save</button>&nbsp;
 
   </div>
     </form>
+
 
   `,
   styles: [
@@ -68,6 +73,7 @@ export class DeartmentListComponent implements OnInit {
    location: new FormControl("",Validators.required),
    spendOn: new FormControl("",Validators.required)
     });
+
   onSubmit(){
     let data:any=this.profileForm.value;
     this.router.navigate(['/about'],{

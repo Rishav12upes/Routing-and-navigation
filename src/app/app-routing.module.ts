@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/departments', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path:'home',component:HomelistComponent},
   {path:'menu',component:DeartmentListComponent},
   {path:'about',component:EmployeeListComponent},

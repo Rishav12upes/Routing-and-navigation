@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DesignService {
 
   constructor(private http:HttpClient) { }
-  messageAlert(){
-    alert("Thanks for subscribe")
-  }
-  product():Observable<any>{
-  return this.http.get('https://jsonplaceholder.typicode.com/users')
 
-  }
+    getUserData():Observable<any>{
+      // let apiurl="https://jsonplaceholder.typicode.com/users";
+      return this.http.get("https://jsonplaceholder.typicode.com/users");
+
+
+}
 }

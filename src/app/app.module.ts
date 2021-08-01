@@ -6,6 +6,8 @@ import { AppRoutingModule ,routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomelistComponent } from './homelist/homelist.component';
 import {HttpClientModule} from '@angular/common/http';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { EdittableComponent } from './edittable/edittable.component';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
    routingComponents,
    HomelistComponent,
+   EditprofileComponent,
+   EdittableComponent
 
   ],
   imports: [

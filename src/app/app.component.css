@@ -43,4 +43,8 @@ h1
 }
 nav{
   background-color:blue;
+  padding-left: 5px;
+}
+body{
+  background-color: rosybrown;
 }

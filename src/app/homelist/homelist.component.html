@@ -1,1 +1,62 @@
-<p>homelist works!</p>
+
+<!-- <p>homelist works!</p> -->
+
+  <div #box>
+    <h5>Username is <span class="text-success">{{userName}}</span></h5>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <button (click)="changechildproperty()"class="btn-success">change child property</button>&nbsp;
+      <button (click)="callchildmethod()"class="btn-success">call child method</button>&nbsp;<br>
+
+    </div>
+  </div>
+
+
+
+<app-editprofile></app-editprofile>
+<!-- <app-employee-list [productselected]="productselected"></app-employee-list> -->
+<h4>Fetch Data from an API using the HttpClient in Angular.....</h4>
+<p>{{products|json}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+       <th>id</th>
+       <th>name</th>
+       <th>username</th>
+        <th>email</th>
+         <th>address</th>
+      </tr>
+    </thead>
+ <tbody>
+ <tr  *ngFor="let  data of elementdata"><td>{{data.id}}</td>
+
+ <td>{{data.name}}</td>
+ <td>{{data.username}}</td>
+ <td>{{data.email}}</td>
+ <td>{{data.address}}</td>
+  </tr>
+       </tbody>
+</table> -->

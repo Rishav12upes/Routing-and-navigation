@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
@@ -25,12 +25,28 @@ import { ActivatedRoute,Router } from '@angular/router';
    <td>{{data.location}}</td>
    <td>{{data.spendOn}}</td>
    <td><button (click)="removeItem(data)" class="btn btn-danger">delete</button>
-      </td>
+   <button class="btn btn-primary" (click)="
+              editCustomer(data.item)" style="margin-left: 20px;"> Edit</button>
+          </td>
+
 
 
    </tr>
          </tbody>
 </table>
+<div *ngIf="updateCustomerId">
+<app-edittable  (customerUpdated)="customerUpdated()" [id]="updateCustomerId"></app-edittable>
+</div>
+
+<div class="col-md-12 bg-success text-white text-center py-4">
+  <h2>please select any Item</h2>
+
+  <button class="btn-primary" (click)="onAddproduct()">Add to cart</button>
+
+
+
+
+
 
   `,
   styles: [
@@ -38,6 +54,13 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class EmployeeListComponent implements OnInit {
 data:any;
+
+// customers: Customer[] = customers;
+updateCustomerId: any;
+
+
+
+
   constructor(
     private router:Router,
     private route:ActivatedRoute
@@ -56,7 +79,17 @@ data:any;
       this.elements.splice(index,1);
     });
   }
+  // @Input() productselected:boolean=false;
+  // selectedproduct:string | undefined;
+  // addedproduct:any;
+  // onselectproduct(product: boolean)
+  // {
+  //   this.productselected=true;
+  //   this.productselected=product;
+  // }
+  onAddproduct(){
 
+  }
 
   ngOnInit() {
 
@@ -67,4 +100,12 @@ this.route.queryParams.subscribe((Params: any)=>{
 
 })
   }
+  editCustomer(id: any) {
+    this.updateCustomerId =id;
+  }
+
+  customerUpdated(){
+    this.updateCustomerId = 0;
+  }
+
 }
