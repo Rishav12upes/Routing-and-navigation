@@ -8,6 +8,7 @@ import { HomelistComponent } from './homelist/homelist.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { EdittableComponent } from './edittable/edittable.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -24,7 +25,12 @@ import { EdittableComponent } from './edittable/edittable.component';
     AppRoutingModule,
     // FormGroup,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
+    
+    
+    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { customers } from '../app.constant';
 import { Customer } from '../models/customer';
 
 @Component({
@@ -10,7 +11,7 @@ import { Customer } from '../models/customer';
 export class EdittableComponent implements OnInit {
   @Input('id') id: string | undefined;
   @Output() customerUpdated = new EventEmitter();
-  // customers: Customer[] = customers;
+   customers: Customer[] = customers;
   CustomerForm = new FormGroup({
     item: new FormControl("",Validators.required),
     amount:new FormControl("",Validators.required),
@@ -28,7 +29,7 @@ export class EdittableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.editCustomer = this.customers.find(x => x.id === this.id);
+    this.editCustomer = this.customers.find(x => x.id === this.id);
     this.CustomerForm.patchValue(this.editCustomer);
   }
   updateCustomer() {
@@ -42,11 +43,11 @@ export class EdittableComponent implements OnInit {
 
     };
 
-    this.customerUpdated.emit("true");
-
-    // const update = this.customers.findIndex(x => x.id === this.id);
-    // this.customers[update] = updateCustomer;
     // this.customerUpdated.emit("true");
+
+     const update = this.customers.findIndex(x => x.id === this.id);
+     this.customers[update] = updateCustomer;
+     this.customerUpdated.emit("true");
 
   }
 

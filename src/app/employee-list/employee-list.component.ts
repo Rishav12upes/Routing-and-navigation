@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
+import { customers } from '../app.constant';
+import { Customer } from '../models/customer';
 
 @Component({
   selector: 'app-employee-list',
   template: `
-    <!-- <h6 >
+  <!--   <h6 >
     Here the details of Items
-</h6> -->
+</h6>--> 
 <table class="table">
     <thead>
       <tr>
@@ -38,8 +40,17 @@ import { ActivatedRoute,Router } from '@angular/router';
 <app-edittable  (customerUpdated)="customerUpdated()" [id]="updateCustomerId"></app-edittable>
 </div>
 
+
 <div class="col-md-12 bg-success text-white text-center py-4">
   <h2>please select any Item</h2>
+  <label for="products">Choose a product:</label>
+
+<select name="products" id="products">
+  <option value="chair">chair</option>
+  <option value="pizza">pizza</option>
+  <option value="laptop">laptop</option>
+  <option value="glass">glass</option>
+</select><br><br>
 
   <button class="btn-primary" (click)="onAddproduct()">Add to cart</button>
 
@@ -55,7 +66,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 export class EmployeeListComponent implements OnInit {
 data:any;
 
-// customers: Customer[] = customers;
+ customers: Customer[] = customers;
 updateCustomerId: any;
 
 

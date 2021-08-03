@@ -12,7 +12,7 @@ import { EditprofileComponent } from '../editprofile/editprofile.component';
   styleUrls: ['./homelist.component.css']
 })
 export class HomelistComponent implements OnInit {
-
+  myimg:string="assets/imgs/bg.jpg";
 userName="ranbow" ;
   @ViewChild('box')box!: ElementRef;
   @ViewChild(EditprofileComponent)child!:EditprofileComponent;
